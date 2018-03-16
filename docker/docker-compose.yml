@@ -1,0 +1,32 @@
+influxdb:
+  image: influxdb:taep
+  net: "host"
+  restart: always
+  volumes:
+      - /root/taep-data/influxdb:/var/lib/influxdb
+telegraf:
+  image: telegraf:taep
+  net: "host"
+  restart: always
+  pid: "host"
+  volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+kapacitor:
+  image: kapacitor:taep
+  net: "host"
+  restart: always
+  volumes:
+    - /root/taep-data/kapacitor:/var/lib/kapacitor
+agent:
+  image: agent:taep
+  net: "host"
+  restart: always
+  volumes:
+    - /root/taep-data/kapacitor:/var/lib/kapacitor
+grafana:
+  image: grafana:taep
+  net: "host"
+  restart: always
+  volumes:
+    - /root/taep-data/grafana:/var/lib/grafana
+

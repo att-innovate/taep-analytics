@@ -1,0 +1,1027 @@
+{
+    "dashboard": {
+        "annotations": {
+            "list": []
+        },
+        "editable": true,
+        "gnetId": null,
+        "graphTooltip": 0,
+        "hideControls": false,
+        "id": null,
+        "links": [],
+        "refresh": "10s",
+        "rows": [
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "local",
+                        "fill": 1,
+                        "id": 1,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 12,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [
+                                    {
+                                        "params": [
+                                            "port"
+                                        ],
+                                        "type": "tag"
+                                    }
+                                ],
+                                "measurement": "ports",
+                                "policy": "default",
+                                "refId": "A",
+                                "resultFormat": "time_series",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "packets_out"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": []
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Port Traffic Out",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "pps",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": 0,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": "311",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "local",
+                        "fill": 1,
+                        "id": 5,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "measurement": "ports",
+                                "policy": "default",
+                                "query": "SELECT \"octets_in\" FROM \"ports\" WHERE \"port\" = 'port_0' AND $timeFilter",
+                                "rawQuery": true,
+                                "refId": "A",
+                                "resultFormat": "time_series",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "octets_in"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "port",
+                                        "operator": "=",
+                                        "value": "port_0"
+                                    }
+                                ]
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Data In  0",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "decbytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": "1400000000",
+                                "min": 0,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "local",
+                        "fill": 1,
+                        "id": 8,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "measurement": "ports",
+                                "policy": "default",
+                                "refId": "A",
+                                "resultFormat": "time_series",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "octets_out"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "port",
+                                        "operator": "=",
+                                        "value": "port_8"
+                                    }
+                                ]
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Data 8 -> 12",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "decbytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": "1400000000",
+                                "min": 0,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "local",
+                        "fill": 1,
+                        "id": 9,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "measurement": "ports",
+                                "policy": "default",
+                                "refId": "A",
+                                "resultFormat": "time_series",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "octets_out"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "port",
+                                        "operator": "=",
+                                        "value": "port_16"
+                                    }
+                                ]
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Data 16 -> 20",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "decbytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": "1400000000",
+                                "min": 0,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 282,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "local",
+                        "fill": 1,
+                        "id": 12,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "alias": "in_4",
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "measurement": "ports",
+                                "policy": "default",
+                                "query": "SELECT \"octets_in\" FROM \"ports\" WHERE \"port\" = 'port_0' AND $timeFilter",
+                                "rawQuery": false,
+                                "refId": "A",
+                                "resultFormat": "time_series",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "octets_in"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "port",
+                                        "operator": "=",
+                                        "value": "port_4"
+                                    }
+                                ]
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Data  In 4",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "decbytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": "1400000000",
+                                "min": 0,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "local",
+                        "fill": 1,
+                        "id": 13,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "measurement": "ports",
+                                "policy": "default",
+                                "query": "SELECT \"octets_out\" FROM \"ports\" WHERE \"port\" = 'port_12' AND $timeFilter",
+                                "rawQuery": true,
+                                "refId": "A",
+                                "resultFormat": "time_series",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "octets_out"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "port",
+                                        "operator": "=",
+                                        "value": "port_12"
+                                    }
+                                ]
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Data 8 <- 12",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "decbytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": "1400000000",
+                                "min": 0,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "local",
+                        "fill": 1,
+                        "id": 14,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "measurement": "ports",
+                                "policy": "default",
+                                "query": "SELECT \"octets_out\" FROM \"ports\" WHERE \"port\" = 'port_20' AND $timeFilter",
+                                "rawQuery": true,
+                                "refId": "A",
+                                "resultFormat": "time_series",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "octets_out"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "port",
+                                        "operator": "=",
+                                        "value": "port_20"
+                                    }
+                                ]
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Data 16 <- 20",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "decbytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": "1400000000",
+                                "min": 0,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "columns": [],
+                        "fontSize": "100%",
+                        "id": 10,
+                        "interval": "",
+                        "links": [],
+                        "pageSize": 10,
+                        "scroll": true,
+                        "showHeader": true,
+                        "sort": {
+                            "col": 0,
+                            "desc": true
+                        },
+                        "span": 6,
+                        "styles": [
+                            {
+                                "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                                "pattern": "Time",
+                                "type": "date"
+                            },
+                            {
+                                "colorMode": null,
+                                "colors": [
+                                    "rgba(245, 54, 54, 0.9)",
+                                    "rgba(237, 129, 40, 0.89)",
+                                    "rgba(50, 172, 45, 0.97)"
+                                ],
+                                "decimals": 2,
+                                "pattern": "/.*/",
+                                "thresholds": [],
+                                "type": "number",
+                                "unit": "short"
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "hide": false,
+                                "measurement": "label",
+                                "policy": "autogen",
+                                "query": "SELECT \"data\" FROM \"autogen\".\"label\" WHERE \"egress\" = '8' OR \"egress\" = '999' AND $timeFilter",
+                                "rawQuery": true,
+                                "refId": "A",
+                                "resultFormat": "table",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "data"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "egress",
+                                        "operator": "=",
+                                        "value": "8"
+                                    }
+                                ]
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Divert Table  0 -> 8",
+                        "transform": "table",
+                        "type": "table"
+                    },
+                    {
+                        "columns": [],
+                        "fontSize": "100%",
+                        "id": 11,
+                        "interval": "",
+                        "links": [],
+                        "pageSize": 20,
+                        "scroll": true,
+                        "showHeader": true,
+                        "sort": {
+                            "col": 0,
+                            "desc": true
+                        },
+                        "span": 6,
+                        "styles": [
+                            {
+                                "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                                "pattern": "Time",
+                                "type": "date"
+                            },
+                            {
+                                "colorMode": null,
+                                "colors": [
+                                    "rgba(245, 54, 54, 0.9)",
+                                    "rgba(237, 129, 40, 0.89)",
+                                    "rgba(50, 172, 45, 0.97)"
+                                ],
+                                "decimals": 2,
+                                "pattern": "/.*/",
+                                "thresholds": [],
+                                "type": "number",
+                                "unit": "short"
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "hide": false,
+                                "measurement": "label",
+                                "policy": "autogen",
+                                "query": "SELECT \"data\" FROM \"autogen\".\"label\" WHERE \"egress\" = '16' OR \"egress\" = '999' AND $timeFilter",
+                                "rawQuery": true,
+                                "refId": "A",
+                                "resultFormat": "table",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "data"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "egress",
+                                        "operator": "=",
+                                        "value": "16"
+                                    }
+                                ]
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Divert Table 0 -> 16",
+                        "transform": "table",
+                        "type": "table"
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "columns": [],
+                        "fontSize": "100%",
+                        "id": 15,
+                        "interval": "",
+                        "links": [],
+                        "pageSize": 10,
+                        "scroll": true,
+                        "showHeader": true,
+                        "sort": {
+                            "col": 0,
+                            "desc": true
+                        },
+                        "span": 6,
+                        "styles": [
+                            {
+                                "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                                "pattern": "Time",
+                                "type": "date"
+                            },
+                            {
+                                "colorMode": null,
+                                "colors": [
+                                    "rgba(245, 54, 54, 0.9)",
+                                    "rgba(237, 129, 40, 0.89)",
+                                    "rgba(50, 172, 45, 0.97)"
+                                ],
+                                "decimals": 2,
+                                "pattern": "/.*/",
+                                "thresholds": [],
+                                "type": "number",
+                                "unit": "short"
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "hide": false,
+                                "measurement": "label",
+                                "policy": "autogen",
+                                "query": "SELECT \"data\" FROM \"autogen\".\"label\" WHERE \"egress\" = '12' OR \"egress\" = '999' AND $timeFilter",
+                                "rawQuery": true,
+                                "refId": "A",
+                                "resultFormat": "table",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "data"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "egress",
+                                        "operator": "=",
+                                        "value": "8"
+                                    }
+                                ]
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Divert Table 4 -> 12",
+                        "transform": "table",
+                        "type": "table"
+                    },
+                    {
+                        "columns": [],
+                        "fontSize": "100%",
+                        "id": 16,
+                        "interval": "",
+                        "links": [],
+                        "pageSize": 20,
+                        "scroll": true,
+                        "showHeader": true,
+                        "sort": {
+                            "col": 0,
+                            "desc": true
+                        },
+                        "span": 6,
+                        "styles": [
+                            {
+                                "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                                "pattern": "Time",
+                                "type": "date"
+                            },
+                            {
+                                "colorMode": null,
+                                "colors": [
+                                    "rgba(245, 54, 54, 0.9)",
+                                    "rgba(237, 129, 40, 0.89)",
+                                    "rgba(50, 172, 45, 0.97)"
+                                ],
+                                "decimals": 2,
+                                "pattern": "/.*/",
+                                "thresholds": [],
+                                "type": "number",
+                                "unit": "short"
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "dsType": "influxdb",
+                                "groupBy": [],
+                                "hide": false,
+                                "measurement": "label",
+                                "policy": "autogen",
+                                "query": "SELECT \"data\" FROM \"autogen\".\"label\" WHERE \"egress\" = '20' OR \"egress\" = '999' AND $timeFilter",
+                                "rawQuery": true,
+                                "refId": "A",
+                                "resultFormat": "table",
+                                "select": [
+                                    [
+                                        {
+                                            "params": [
+                                                "data"
+                                            ],
+                                            "type": "field"
+                                        }
+                                    ]
+                                ],
+                                "tags": [
+                                    {
+                                        "key": "egress",
+                                        "operator": "=",
+                                        "value": "16"
+                                    }
+                                ]
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Divert Table 4 -> 20",
+                        "transform": "table",
+                        "type": "table"
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            }
+        ],
+        "schemaVersion": 14,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+            "list": []
+        },
+        "time": {
+            "from": "now-15m",
+            "to": "now"
+        },
+        "timepicker": {
+            "refresh_intervals": [
+                "5s",
+                "10s",
+                "30s",
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ],
+            "time_options": [
+                "5m",
+                "15m",
+                "1h",
+                "6h",
+                "12h",
+                "24h",
+                "2d",
+                "7d",
+                "30d"
+            ]
+        },
+        "timezone": "browser",
+        "title": "Network - TAEP (template)",
+        "version": 0
+    }
+}

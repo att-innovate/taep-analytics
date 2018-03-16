@@ -1,0 +1,10 @@
+batch
+    |query('''
+        SELECT *
+        FROM "telegraf"."autogen".ports
+    ''')
+        .period(30s)
+        .every(10s)
+        .groupBy(*)
+        .fill(0)
+    @agent()
